@@ -1,0 +1,66 @@
+#################################################################
+## Groupes
+#################################################################
+
+# A comma separated list of states that have to be tracked as a single group
+# Grouped states should share the same type of states (ON/OFF or HOME/NOT_HOME)
+
+Lecteurs:
+  - media_player.plex
+  - media_player.tv
+  - media_player.appart
+  - media_player.enceintes_salon
+  - media_player.salon
+  - media_player.maison
+
+Chambre Aymerick:
+  - light.Lampe_Bureau_Haut
+  - light.Lampe_Bureau_Bas
+
+Chambre:
+  - light.Bloom_Chambre
+  - light.Hue_go_Chambre
+
+
+Salon:
+  - light.Lightstrip_TV
+  - light.Lightstrip_Buffet
+  - light.Iris_Salon
+  - light.Iris_Salon_2
+  - light.Plafonnier_Salon
+
+Entree:
+  - light.Lightstrip_Plus_Couloir
+  - light.Bloom_Entree
+
+Lumieres:
+  name: Lumieres
+  view: yes
+  entities:
+   - group.Bureau
+   - group.Salon
+   - group.Entree
+   - group.Chambre
+   - group.Chambre_Aymerick
+
+Famille:
+  name: Famille
+  entities:
+    - device_tracker.c0eefb5847b2
+    - device_tracker.19216827
+    - device_tracker.ec107b168db7
+
+Horaires RER:
+  - sensor.ratp
+  - sensor.ratp_2
+  - sensor.ratp_3
+
+Météo:
+  - sun.sun
+  - sensor.moon
+  - sensor.meteo_condition
+  - sensor.meteo_forecast
+  - sensor.meteo_temperature
+  - sensor.meteo_cloud_coverage
+  - sensor.meteo_rain
+  - sensor.meteo_humidity

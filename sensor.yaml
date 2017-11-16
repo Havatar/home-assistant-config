@@ -1,0 +1,55 @@
+- platform: rest
+  name: Ratp
+  resource: https://api-ratp.pierre-grimaud.fr/v3/schedules/rers/A/noisiel/A
+  value_template: '{{ value_json.result.schedules[0].destination }} {{ value_json.result.schedules[0].message }}'
+  method: GET
+
+- platform: rest
+  name: Ratp 2
+  resource: https://api-ratp.pierre-grimaud.fr/v3/schedules/rers/A/noisiel/A
+  value_template: '{{ value_json.result.schedules[1].destination }} {{ value_json.result.schedules[1].message }}'
+  method: GET
+
+- platform: rest
+  name: Ratp 3
+  resource: https://api-ratp.pierre-grimaud.fr/v3/schedules/rers/A/noisiel/A
+  value_template: '{{ value_json.result.schedules[2].destination }} {{ value_json.result.schedules[2].message }}'
+  method: GET
+
+- platform: moon
+
+- platform: openweathermap
+  name: Météo
+  api_key: !secret openweathermap_api
+  language: fr
+  forecast: 1
+  monitored_conditions:
+    - weather
+    - temperature
+    - humidity
+    - clouds
+    - rain
+
+- platform: rest
+  resource: !secret hue_motion_temp_entree
+  value_template: '{{ value_json.state.temperature | float / 100 }}'
+  unit_of_measurement: °C
+  name: Temp Entrée
+
+- platform: rest
+  resource: !secret hue_motion_temp_etage
+  value_template: '{{ value_json.state.temperature | float / 100 }}'
+  unit_of_measurement: °C
+  name: Temp Etage
+
+- platform: rest
+  resource: !secret hue_motion_lux_entree
+  value_template: '{{ value_json.state.lightlevel }}'
+  unit_of_measurement: Lux
+  name: Lux Entrée
+
+- platform: rest
+  resource: !secret hue_motion_lux_etage
+  value_template: '{{ value_json.state.lightlevel }}'
+  unit_of_measurement: Lux
+  name: Lux Etage

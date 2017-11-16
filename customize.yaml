@@ -1,0 +1,22 @@
+group.ratp:
+  icon: mdi:subway
+sensor.ratp:
+  icon: mdi:subway
+sensor.ratp_2:
+  icon: mdi:subway
+sensor.ratp_3:
+  icon: mdi:subway
+device_tracker.19216827:
+  icon: mdi:laptop
+zone.home: {}
+group.lumieres:
+  icon: mdi:lightbulb
+group.bureau: {}
+light.plafonnier_salon:
+  icon: mdi:ceiling-light
+light.lightstrip_tv:
+  icon: mdi:led-strip
+light.lightstrip_plus_couloir:
+  icon: mdi:led-strip
+light.lightstrip_buffet:
+  icon: mdi:led-strip

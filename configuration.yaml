@@ -1,0 +1,85 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # C for Celcius, F for Fahrenheit
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Paris
+
+  customize: !include customize.yaml
+
+frontend:
+
+history:
+
+config:
+
+conversation:  # Allows you to issue voice commands from the frontend
+
+logbook:  # View all events in a logbook
+
+sun:  # Track the sun
+
+map:
+
+discovery:  # Discover some devices automatically
+
+updater:  # Checks for available updates
+
+automation: !include automations.yaml
+
+sensor: !include sensor.yaml
+
+group: !include group.yaml
+
+ffmpeg: 
+  ffmpeg_bin: /usr/bin/avconv
+
+# Notifications
+
+notify:
+  platform: pushbullet
+  api_key: !secret pushbullet_api
+
+
+# IFTTT
+ifttt:
+  key: !secret ifttt_key
+
+# Philips Hue
+light:
+  platform: hue
+  host: 192.168.2.11
+  allow_hue_groups: false
+
+
+# Device Tracker
+
+#device_tracker:
+#  platform: nmap_tracker
+#  hosts: 192.168.2.2/254
+#  home_interval: 10
+#  track_new_devices: yes
+#  interval_seconds: 12
+#  consider_home: 180
+
+
+device_tracker:
+  platform: tplink
+  host: 192.168.2.1
+  username: !secret tplink_username
+  password: !secret tplink_password
+
+
+
+
+
+
+
+
+
+
+
