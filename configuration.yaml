@@ -55,19 +55,21 @@ light:
   host: 192.168.2.11
   allow_hue_groups: false
 
+# Remote
+
 
 # Device Tracker
 
-#device_tracker:
-#  platform: nmap_tracker
-#  hosts: 192.168.2.2/254
-#  home_interval: 10
-#  track_new_devices: yes
-#  interval_seconds: 12
-#  consider_home: 180
-
-
 device_tracker:
+  platform: nmap_tracker
+  hosts: 192.168.2.2-254
+  home_interval: 10
+  track_new_devices: yes
+  interval_seconds: 12
+  consider_home: 180
+
+
+device_tracker 2:
   platform: tplink
   host: 192.168.2.1
   username: !secret tplink_username

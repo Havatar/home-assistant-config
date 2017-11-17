@@ -51,6 +51,7 @@ Famille:
     - device_tracker.ec107b168db7
 
 Horaires RER:
+  - sensor.traffic_rer_a
   - sensor.ratp
   - sensor.ratp_2
   - sensor.ratp_3

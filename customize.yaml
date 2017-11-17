@@ -11,12 +11,9 @@ device_tracker.19216827:
 zone.home: {}
 group.lumieres:
   icon: mdi:lightbulb
+  hidden: true
 group.bureau: {}
 light.plafonnier_salon:
   icon: mdi:ceiling-light
 light.lightstrip_tv:
-  icon: mdi:led-strip
-light.lightstrip_plus_couloir:
-  icon: mdi:led-strip
-light.lightstrip_buffet:
   icon: mdi:led-strip

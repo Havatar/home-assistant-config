@@ -16,6 +16,12 @@
   value_template: '{{ value_json.result.schedules[2].destination }} {{ value_json.result.schedules[2].message }}'
   method: GET
 
+- platform: rest
+  name: Traffic RER A
+  resource: https://api-ratp.pierre-grimaud.fr/v3/traffic/rers/A
+  value_template: '{{ value_json.result.message }}'
+  method: GET
+
 - platform: moon
 
 - platform: openweathermap
