@@ -53,3 +53,4 @@
   value_template: '{{ value_json.state.lightlevel }}'
   unit_of_measurement: Lux
   name: Lux Etage
+
