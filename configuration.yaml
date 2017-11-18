@@ -31,9 +31,9 @@ updater:  # Checks for available updates
 
 automation: !include automations.yaml
 
-sensor: !include sensor.yaml
+sensor: !include sensors.yaml
 
-group: !include group.yaml
+group: !include groups.yaml
 
 ffmpeg: 
   ffmpeg_bin: /usr/bin/avconv

@@ -5,13 +5,23 @@
 # A comma separated list of states that have to be tracked as a single group
 # Grouped states should share the same type of states (ON/OFF or HOME/NOT_HOME)
 
-Lecteurs:
-  - media_player.plex
-  - media_player.tv
-  - media_player.appart
-  - media_player.enceintes_salon
-  - media_player.salon
-  - media_player.maison
+# Page d'accueil
+
+default_view:
+  view: yes
+  icon: mdi:home
+  entities:
+    - group.famille
+    - group.horaires_rer
+    - group.Bureau
+    - group.Salon
+    - group.Entree
+    - group.Chambre
+    - group.Chambre_Aymerick
+    - group.meteo
+    - group.maison
+
+# Groupes
 
 Chambre Aymerick:
   - light.Lampe_Bureau_Haut
@@ -20,7 +30,6 @@ Chambre Aymerick:
 Chambre:
   - light.Bloom_Chambre
   - light.Hue_go_Chambre
-
 
 Salon:
   - light.Lightstrip_TV
@@ -56,6 +65,12 @@ Horaires RER:
   - sensor.ratp_2
   - sensor.ratp_3
 
+Maison:
+  - sensor.temp_entree
+  - sensor.lux_entree
+  - sensor.temp_etage
+  - sensor.lux_etage
+
 Météo:
   - sun.sun
   - sensor.moon
@@ -65,3 +80,14 @@ Météo:
   - sensor.meteo_cloud_coverage
   - sensor.meteo_rain
   - sensor.meteo_humidity
+
+Lecteurs:
+  view: yes
+  icon: mdi:cast
+  entities:
+    - media_player.plex
+    - media_player.tv
+    - media_player.appart
+    - media_player.enceintes_salon
+    - media_player.salon
+    - media_player.maison
