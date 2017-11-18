@@ -60,3 +60,14 @@
   unit_of_measurement: Lux
   name: Lux Etage
 
+- platform: rest
+  resource: !secret hue_motion_entree
+  value_template: '{{ value_json.state.status }}'
+  scan_interval: 2
+  name: 'Entrée Mouvement'
+
+- platform: rest
+  resource: !secret hue_motion_etage
+  value_template: '{{ value_json.state.status }}'
+  scan_interval: 2
+  name: 'Etage Mouvement'

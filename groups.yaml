@@ -11,6 +11,8 @@ default_view:
   view: yes
   icon: mdi:home
   entities:
+    - sensor.entree_mouvement
+    - sensor.etage_mouvement
     - group.famille
     - group.horaires_rer
     - group.Bureau
