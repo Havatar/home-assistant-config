@@ -38,13 +38,13 @@
 
 - platform: rest
   resource: !secret hue_motion_temp_entree
-  value_template: '{{ value_json.state.temperature | float / 100 }}'
+  value_template: '{{ (value_json.state.temperature | float / 100 + 1.3) | round (1) }}'
   unit_of_measurement: °C
   name: Temp Entrée
 
 - platform: rest
   resource: !secret hue_motion_temp_etage
-  value_template: '{{ value_json.state.temperature | float / 100 }}'
+  value_template: '{{ (value_json.state.temperature | float / 100 + 1.3) | round (1) }}'
   unit_of_measurement: °C
   name: Temp Etage
 
@@ -63,11 +63,11 @@
 - platform: rest
   resource: !secret hue_motion_entree
   value_template: '{{ value_json.state.status }}'
-  scan_interval: 2
+  scan_interval: 5
   name: 'Entrée Mouvement'
 
 - platform: rest
   resource: !secret hue_motion_etage
   value_template: '{{ value_json.state.status }}'
-  scan_interval: 2
+  scan_interval: 5
   name: 'Etage Mouvement'

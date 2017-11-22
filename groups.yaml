@@ -39,6 +39,7 @@ Salon:
   - light.Iris_Salon
   - light.Iris_Salon_2
   - light.Plafonnier_Salon
+  - light.hue_Iris_Gratuite
 
 Entree:
   - light.Lightstrip_Plus_Couloir
